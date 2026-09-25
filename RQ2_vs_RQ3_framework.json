@@ -1,0 +1,361 @@
+{
+  "metadata": {
+    "source_path": "RQ2_RQ3_framework_display_only_2026-09-25__NOT_MODEL_EVALUATION",
+    "custom_fields_schema": [
+      {
+        "name": "row_id",
+        "type": "string"
+      },
+      {
+        "name": "section",
+        "type": "category"
+      },
+      {
+        "name": "evaluation_status",
+        "type": "category"
+      },
+      {
+        "name": "source_section",
+        "type": "text"
+      },
+      {
+        "name": "score_note",
+        "type": "text"
+      }
+    ]
+  },
+  "models": [
+    {
+      "name": "RQ2｜六类回应意图（框架）"
+    },
+    {
+      "name": "RQ3｜四类互动行为（框架）"
+    }
+  ],
+  "examples": [
+    {
+      "input_text": "01｜研究问题与核心区别",
+      "tags": [
+        "研究定位",
+        "框架展示_非模型评估"
+      ],
+      "output_text_a": "RQ2：参与者在每条消息中希望 chatbot 提供哪些回应功能？\nWhat response functions do participants seek from the chatbot in each message?\n关注当下想得到什么回应，例如事实、解决办法、计划、解释、情感支持或对个人担忧的确认。",
+      "output_text_b": "RQ3：在睡眠和心理健康相关交流中，参与者如何承接并回应先前的 chatbot 回复？\nHow do participants take up and respond to earlier chatbot replies while discussing sleep and mental health?\n关注这条消息如何关联此前交流，例如澄清、补充、继续求助或评价答复。",
+      "score": 0,
+      "individual_rater_scores": [],
+      "custom_fields": {
+        "row_id": "F01",
+        "section": "研究定位",
+        "evaluation_status": "not_evaluated_display_only",
+        "source_section": "§1, §4, §11",
+        "score_note": "0仅用于满足导入格式；没有评判优劣，也不代表实测平局。"
+      }
+    },
+    {
+      "input_text": "02｜分析单位与适用范围",
+      "tags": [
+        "研究定位",
+        "框架展示_非模型评估"
+      ],
+      "output_text_a": "单位为一次完整提交的参与者消息；多句仍作为一个单位。开场消息如能独立理解，可编码 RQ2。每条消息可有0—6个阳性意图。会话是容纳这些消息的序列与聚类单位。",
+      "output_text_b": "单位为已有 chatbot 回复之后的一条完整参与者消息，并结合此前对话。只给目标消息编码。没有先前 chatbot 回复的开场消息不适用于 RQ3，应记 outside_unit_scope，而非四项全0。",
+      "score": 0,
+      "individual_rater_scores": [],
+      "custom_fields": {
+        "row_id": "F02",
+        "section": "研究定位",
+        "evaluation_status": "not_evaluated_display_only",
+        "source_section": "§1, §5",
+        "score_note": "0仅用于满足导入格式；没有评判优劣，也不代表实测平局。"
+      }
+    },
+    {
+      "input_text": "03｜上下文与编码资格",
+      "tags": [
+        "研究定位",
+        "框架展示_非模型评估"
+      ],
+      "output_text_a": "目标消息连同同一会话中全部可用的先前对话构成 context packet；标清角色、顺序和目标，不提供未来消息。人类与模型获得同一冻结文本。先区分 eligible、insufficient_context、outside_unit_scope。缺少必要前文不能记作六项全0。",
+      "output_text_b": "使用相同 context packet，尤其检查前一 chatbot 回复及目标中的指代。主题标签不能替代缺失对话。超出共同上下文预算时进入单列的长文本集合，或先冻结统一的有界上下文方案；不能为不同编码者私自截取不同内容。",
+      "score": 0,
+      "individual_rater_scores": [],
+      "custom_fields": {
+        "row_id": "F03",
+        "section": "研究定位",
+        "evaluation_status": "not_evaluated_display_only",
+        "source_section": "§5",
+        "score_note": "0仅用于满足导入格式；没有评判优劣，也不代表实测平局。"
+      }
+    },
+    {
+      "input_text": "04｜类别与层级",
+      "tags": [
+        "编码体系",
+        "框架展示_非模型评估"
+      ],
+      "output_text_a": "六个独立二元意图：\n1. information_seeking：信息寻求\n2. problem_solving：问题解决\n3. planning_routine_building：规划／决策支持\n4. explanation_psychoeducation：解释／心理教育\n5. emotional_support_seeking：情感支持寻求\n6. reassurance_seeking：安心确认寻求\n工具性／功能性与社会情感性仅用于展示分组，不增加判断层级。",
+      "output_text_b": "四个独立二元互动行为：\n1. RC：理解修复／澄清\n2. CE：情境补充\n3. CH：继续请求帮助\n4. RU：回应确认／评价\n仅在 RU=1 时编码 uptake_valence。回应倾向是条件属性，不是第五个行为。",
+      "score": 0,
+      "individual_rater_scores": [],
+      "custom_fields": {
+        "row_id": "F04",
+        "section": "编码体系",
+        "evaluation_status": "not_evaluated_display_only",
+        "source_section": "§2, §4, §11",
+        "score_note": "0仅用于满足导入格式；没有评判优劣，也不代表实测平局。"
+      }
+    },
+    {
+      "input_text": "05｜RQ2 六类意图的纳入与排除",
+      "tags": [
+        "操作定义",
+        "框架展示_非模型评估"
+      ],
+      "output_text_a": "信息寻求：请求事实、定义、描述、资源或可用性；不能把所有问句都计入。\n问题解决：针对明确困难请求办法、应对措施或下一步行动；困难陈述本身不足。\n规划／决策支持：请求时间表、惯例、有序计划、优先级、选项取舍或具体安排；不因计划可解决问题而自动加 problem_solving。\n解释／心理教育：请求原因、机制或关系如何运作；单纯定义不等于机制解释。\n情感支持寻求：请求或明确邀请倾听、安慰、共情、鼓励、陪伴；情绪或自我披露本身不足。\n安心确认寻求：请求对个人担忧的正常性、可接受性、安全性、严重性或应对能力作确认／评价；一般流行率问题和行动选择不自动计入。",
+      "output_text_b": "这些是 RQ2 的回应需求定义，不是 RQ3 的四项行为。\n同一请求可同时具有一个回应功能和一个互动行为。例如针对前文术语提问，在 RQ2 可属于信息寻求，在 RQ3 可属于 RC。\n必须分别依据各自定义判定；不存在六类意图到四类行为的一一映射。",
+      "score": 0,
+      "individual_rater_scores": [],
+      "custom_fields": {
+        "row_id": "F05",
+        "section": "操作定义",
+        "evaluation_status": "not_evaluated_display_only",
+        "source_section": "§3, §4, §11",
+        "score_note": "0仅用于满足导入格式；没有评判优劣，也不代表实测平局。"
+      }
+    },
+    {
+      "input_text": "06｜RQ3 四类行为的纳入与排除",
+      "tags": [
+        "操作定义",
+        "框架展示_非模型评估"
+      ],
+      "output_text_a": "RQ2 仍根据目标实际请求的回应功能判断。\n回答 chatbot 的事实问题、补充个人背景、感谢或评价建议，未必请求任何六类回应，因此可能六项全0。\n不能为了与 RQ3 的阳性标签对应而强加 RQ2 意图。",
+      "output_text_b": "RC：询问可辨认的 chatbot 内容的含义或指代，或纠正 chatbot 对自己的误解；普通新问题、只要更多方案不算。\nCE：新增、具体说明或更正相关个人／情境信息，包括症状、感受、限制、偏好、尝试及结果；纯请求、原样重复和推测事实不算。\nCH：在回复后进一步明确请求信息、建议、情感支持、行动或改写答案；仅问前一句什么意思归 RC，单纯描述不算 CH。\nRU：明确确认、感谢、接受、评价或拒绝可辨认的 chatbot 回复；继续交谈、回答事实问题、问候或情绪陈述本身不算。",
+      "score": 0,
+      "individual_rater_scores": [],
+      "custom_fields": {
+        "row_id": "F06",
+        "section": "操作定义",
+        "evaluation_status": "not_evaluated_display_only",
+        "source_section": "§4, §11",
+        "score_note": "0仅用于满足导入格式；没有评判优劣，也不代表实测平局。"
+      }
+    },
+    {
+      "input_text": "07｜独立多标签与边界",
+      "tags": [
+        "判定规则",
+        "框架展示_非模型评估"
+      ],
+      "output_text_a": "六项分别判断0/1，不设主次意图，也不限制最多两个标签。多个标签需要多个实际回应功能的证据。\n解释不因含有知识而自动加信息寻求；计划不因可解决困难而自动加问题解决；安心确认不自动加情感支持。\n类别可区分，但整条消息不必互斥。",
+      "output_text_b": "四项分别判断0/1，可以同时出现。“独立编码”不等于统计独立。\n同一句纠正可同时支持 RC 和 CE；如果还明确拒绝前文理解，可同时支持 RU。\n不能因为消息处于后续位置就自动记 CH 或 RU，也不能把每个问句记为 RC。",
+      "score": 0,
+      "individual_rater_scores": [],
+      "custom_fields": {
+        "row_id": "F07",
+        "section": "判定规则",
+        "evaluation_status": "not_evaluated_display_only",
+        "source_section": "§4.3, §11",
+        "score_note": "0仅用于满足导入格式；没有评判优劣，也不代表实测平局。"
+      }
+    },
+    {
+      "input_text": "08｜回应倾向与研究边界",
+      "tags": [
+        "判定规则",
+        "框架展示_非模型评估"
+      ],
+      "output_text_a": "RQ2 不输出情绪、痛苦程度、披露、风险或严重度分数。睡眠／心理健康主题不自动等于寻求情感支持。\n标签描述文本请求的回应功能，不声称直接测量参与者私下动机。",
+      "output_text_b": "仅当 RU=1：\npositive：明确肯定、赞同、有帮助或自报成功；\nnegative：否定、拒绝、不适用、错误或无效；\nneutral：确认、理解、感谢或打算尝试，未明确评价；\nmixed：同时有明确正面及负面评价。\nRU=0 → not_applicable；RU缺失／无效 → 倾向缺失。\n倾向针对答复而非用户心情。“谢谢，但不适合我”是 negative，不是 mixed。",
+      "score": 0,
+      "individual_rater_scores": [],
+      "custom_fields": {
+        "row_id": "F08",
+        "section": "判定规则",
+        "evaluation_status": "not_evaluated_display_only",
+        "source_section": "§3, §11",
+        "score_note": "0仅用于满足导入格式；没有评判优劣，也不代表实测平局。"
+      }
+    },
+    {
+      "input_text": "09｜全零、缺失与错误",
+      "tags": [
+        "判定规则",
+        "框架展示_非模型评估"
+      ],
+      "output_text_a": "符合资格且六项全0：未观察到六类规定回应功能，派生为 no_listed_rq2_intent。人类另审查是问候、事实作答还是框架未覆盖的实质请求。\n必要上下文缺失、模型未返回、JSON无效必须单独记录，不得转成0。",
+      "output_text_b": "符合资格且四项全0：没有四类行为的证据；RU=0 时倾向不适用。\n开场消息不适用、上下文不足和输出错误均单独记录，不能混同四项全0。旧六行为标签不能直接改名当作新四行为人工参考。",
+      "score": 0,
+      "individual_rater_scores": [],
+      "custom_fields": {
+        "row_id": "F09",
+        "section": "判定规则",
+        "evaluation_status": "not_evaluated_display_only",
+        "source_section": "§4.4, §5, §10, §11",
+        "score_note": "0仅用于满足导入格式；没有评判优劣，也不代表实测平局。"
+      }
+    },
+    {
+      "input_text": "10｜模型输出格式",
+      "tags": [
+        "输出与流程",
+        "框架展示_非模型评估"
+      ],
+      "output_text_a": "输出恰好六个键，值仅为整数0或1：\n{\"information_seeking\":0,\"problem_solving\":0,\"planning_routine_building\":0,\"explanation_psychoeducation\":0,\"emotional_support_seeking\":0,\"reassurance_seeking\":0}\n以上0只展示结构，不是默认编码。资格判断、复核说明和证据摘录保存在外围记录。",
+      "output_text_b": "依照当前调用结构分别输出：\n{\"RC\":0}\n{\"CE\":0}\n{\"CH\":0}\n{\"RU\":0}\n每次仅判断一项；0仅展示结构。\nRU=1 后另一次输出 uptake_valence。RU=0 的 not_applicable 由程序填写。资格与错误状态保存在外围记录。",
+      "score": 0,
+      "individual_rater_scores": [],
+      "custom_fields": {
+        "row_id": "F10",
+        "section": "输出与流程",
+        "evaluation_status": "not_evaluated_display_only",
+        "source_section": "§8.2",
+        "score_note": "0仅用于满足导入格式；没有评判优劣，也不代表实测平局。"
+      }
+    },
+    {
+      "input_text": "11｜人工参考与模型比较",
+      "tags": [
+        "输出与流程",
+        "框架展示_非模型评估"
+      ],
+      "output_text_a": "先匿名化、分配稳定ID、检查资格，向人类与模型提供同一文本。独立人工编码后，保留裁决前结果计算一致性，再形成裁决参考。冻结手册、prompt及测试集后比较模型。研究最终标签由负责人复核。",
+      "output_text_b": "采用相同流程，并验证四行为定义、前文指代及健康支持片段边界。AI只能作为AI比较者，不能算第二位独立人类编码者。\n比较两个模型时，应对同一 RQ3 任务、同一条目标消息进行并排比较；不是把 RQ2 和 RQ3 当作竞争模型。",
+      "score": 0,
+      "individual_rater_scores": [],
+      "custom_fields": {
+        "row_id": "F11",
+        "section": "输出与流程",
+        "evaluation_status": "not_evaluated_display_only",
+        "source_section": "§1, §6, §8",
+        "score_note": "0仅用于满足导入格式；没有评判优劣，也不代表实测平局。"
+      }
+    },
+    {
+      "input_text": "12｜可靠性与性能指标",
+      "tags": [
+        "验证与报告",
+        "框架展示_非模型评估"
+      ],
+      "output_text_a": "人工可靠性：逐意图裁决前一致率、Cohen’s kappa、阳性一致率及边际频数。\n模型验证：逐意图precision／recall／F1及支持数、macro／micro-F1、exact-set agreement、输出有效率及人工修改负担。每类用2×2混淆表，多标签不适用单个6×6互斥混淆矩阵。",
+      "output_text_b": "四行为使用同类二元验证指标；回应倾向另行报告，并明确RU条件分母与RU检出失败。没有匹配当前定义的人工参考，不能报告正式准确率或假阳性率。\n推断按参与者聚类；没有参与者ID时按会话聚类。三次重复生成不等于三倍样本量。",
+      "score": 0,
+      "individual_rater_scores": [],
+      "custom_fields": {
+        "row_id": "F12",
+        "section": "验证与报告",
+        "evaluation_status": "not_evaluated_display_only",
+        "source_section": "§8.3, §9",
+        "score_note": "0仅用于满足导入格式；没有评判优劣，也不代表实测平局。"
+      }
+    },
+    {
+      "input_text": "13｜研究结果应如何呈现",
+      "tags": [
+        "验证与报告",
+        "框架展示_非模型评估"
+      ],
+      "output_text_a": "建议呈现六类意图的阳性数量、比例及分母、多意图共现、全零残余审查，以及按研究情境分层的描述。\n比例允许合计超过100%，因为采用多标签；注明按话轮还是按参与者／会话统计。\n用途：描述参与者表达了哪些支持需求。",
+      "output_text_b": "报告健康支持片段内合格后续话轮的行为频率，以及至少有一个合格话轮的会话中出现该行为的比例。RU倾向使用明确的条件分母。\n保留离题话轮，但另行报告。可探索行为序列，不能从澄清、继续求助或正面评价直接推断治疗效果、信任或真实依从性。",
+      "score": 0,
+      "individual_rater_scores": [],
+      "custom_fields": {
+        "row_id": "F13",
+        "section": "验证与报告",
+        "evaluation_status": "not_evaluated_display_only",
+        "source_section": "§4, §9, §11；RQ2呈现方式为本次整理建议",
+        "score_note": "0仅用于满足导入格式；没有评判优劣，也不代表实测平局。"
+      }
+    },
+    {
+      "input_text": "14｜框架当前状态",
+      "tags": [
+        "验证与报告",
+        "框架展示_非模型评估"
+      ],
+      "output_text_a": "基于 manual_2026-09-22_review_draft 的六意图框架，供独立人工试编码。历史105条RQ2开发测试不是新手册的独立验证。当前框架整理没有运行模型，也没有生成新性能结果。",
+      "output_text_b": "基于同版手册的四行为与条件倾向框架，供独立人工试编码。历史69条后续消息／30段会话的输出不构成新四行为人工参考。新手册试编码、共享上下文控制与正式验证仍需完成。",
+      "score": 0,
+      "individual_rater_scores": [],
+      "custom_fields": {
+        "row_id": "F14",
+        "section": "验证与报告",
+        "evaluation_status": "not_evaluated_display_only",
+        "source_section": "§1, §6, §9, §10",
+        "score_note": "0仅用于满足导入格式；没有评判优劣，也不代表实测平局。"
+      }
+    },
+    {
+      "input_text": "15｜同一消息双重编码：澄清前文术语\nChatbot: Keep the wake time consistent.\nParticipant: What does consistent mean here?",
+      "tags": [
+        "教学对照",
+        "框架展示_非模型评估"
+      ],
+      "output_text_a": "信息寻求=1；其余五项=0。\n理由：请求前文术语的定义，没有请求因果机制或实际行动方案。",
+      "output_text_b": "RC=1，CE=0，CH=0，RU=0；uptake_valence=not_applicable。\n理由：询问前文具体措辞的含义。",
+      "score": 0,
+      "individual_rater_scores": [],
+      "custom_fields": {
+        "row_id": "E01",
+        "section": "教学对照",
+        "evaluation_status": "not_evaluated_display_only",
+        "source_section": "§11原有教学例；RQ2为本次规则应用示范，非人工金标准",
+        "score_note": "0仅用于满足导入格式；没有评判优劣，也不代表实测平局。"
+      }
+    },
+    {
+      "input_text": "16｜同一消息双重编码：补充限制并求助\nChatbot: Try a quieter room.\nParticipant: I share a room. Please suggest another option.",
+      "tags": [
+        "教学对照",
+        "框架展示_非模型评估"
+      ],
+      "output_text_a": "问题解决=1；其余五项=0。\n理由：针对现有条件请求替代办法，尚未要求有序计划或明确选项取舍。",
+      "output_text_b": "RC=0，CE=1，CH=1，RU=0；uptake_valence=not_applicable。\n理由：提供共享房间这一限制并继续请求办法；没有明确评价答复。",
+      "score": 0,
+      "individual_rater_scores": [],
+      "custom_fields": {
+        "row_id": "E02",
+        "section": "教学对照",
+        "evaluation_status": "not_evaluated_display_only",
+        "source_section": "§11原有教学例；RQ2为本次规则应用示范，非人工金标准",
+        "score_note": "0仅用于满足导入格式；没有评判优劣，也不代表实测平局。"
+      }
+    },
+    {
+      "input_text": "17｜同一消息双重编码：确认理解\nChatbot: Try making a short list before bed.\nParticipant: Thanks, I understand.",
+      "tags": [
+        "教学对照",
+        "框架展示_非模型评估"
+      ],
+      "output_text_a": "六项全部=0。\n理由：确认理解，没有请求六类回应功能。合格文本的全零不是编码失败。",
+      "output_text_b": "RC=0，CE=0，CH=0，RU=1；uptake_valence=neutral。\n理由：感谢并确认理解，但未明确说建议有帮助或有效。",
+      "score": 0,
+      "individual_rater_scores": [],
+      "custom_fields": {
+        "row_id": "E03",
+        "section": "教学对照",
+        "evaluation_status": "not_evaluated_display_only",
+        "source_section": "RQ3_four_acts_bilingual.md原有教学例；按9月22日规则解释",
+        "score_note": "0仅用于满足导入格式；没有评判优劣，也不代表实测平局。"
+      }
+    },
+    {
+      "input_text": "18｜同一消息双重编码：尝试结果与进一步求助\nChatbot: Try making a short list before bed.\nParticipant: I tried that last night and it did not help. What else can I do?",
+      "tags": [
+        "教学对照",
+        "框架展示_非模型评估"
+      ],
+      "output_text_a": "问题解决=1；其余五项=0。\n理由：请求针对困难的其他行动办法；尝试经历不是额外回应意图。",
+      "output_text_b": "RC=0，CE=1，CH=1，RU=1；uptake_valence=negative。\n理由：补充尝试结果、继续求助，并明确说之前的办法没有帮助。该陈述是自报，不能当作已验证的健康效果。",
+      "score": 0,
+      "individual_rater_scores": [],
+      "custom_fields": {
+        "row_id": "E04",
+        "section": "教学对照",
+        "evaluation_status": "not_evaluated_display_only",
+        "source_section": "RQ3_four_acts_bilingual.md原有教学例；按9月22日规则解释",
+        "score_note": "0仅用于满足导入格式；没有评判优劣，也不代表实测平局。"
+      }
+    }
+  ]
+}
